@@ -5,10 +5,65 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.11/tailwind.min.css'>
 </head>
 
+<style>
+  .task-form {
+    padding: 20px;
+  }
+  .button {
+    padding: 5px;
+  }
+  .task-field,
+  .date-field {
+    border: 1px solid grey;
+    padding: 3px;
+  }
+  #task-list {
+    padding-left: 40px;
+  }
+</style>
+
 <body>
-<div id="app"></div>
+  <div id="app"></div>
 
-<script src="src/index.ts"></script>
-</body>
+  <ul id="task-list" role="list" class="divide-y divide-gray-100 box-content"></ul>
+  <form id="task-create-form" class="task-form w-full max-w-sm">
+    <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/3">
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 task-title" for="task-title">
+          Todo
+        </label>
+      </div>
+      <div class="md:w-2/3">
+        <input class="task-field appearance-none border-2 border-gray-200 rounded w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="task-title" type="text" required="required">
+      </div>
+    </div>
+    <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/3">
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 task-title" for="task-date">
+          Date
+        </label>
+      </div>
+      <div class="md:w-2/3">
+        <input class="task-field appearance-none border-2 border-gray-200 rounded w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="task-date" type="datetime-local" required="required">
+      </div>
+    </div>
+    <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/3">
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4 task-title" for="task-body">
+          Body
+        </label>
+      </div>
+      <div class="md:w-2/3">
+        <textarea class="task-field appearance-none border-2 border-gray-200 rounded w-full py-4 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="task-body" rows="4" cols="50">
+        </textarea>
+      </div>
+    </div>
+    <div class="md:flex md:items-center mb-6">
+      <div class="md:w-1/3"></div>
+      <button type="submit" class="button btn-blue bg-blue-500 rounded text-white">Add task</button>
+    </div>
+  </form>
 
+  <script src="src/index.ts"></script>
+  </body>
 </html>

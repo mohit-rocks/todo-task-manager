@@ -1,15 +1,14 @@
-import {openDB, DBSchema, IDBPDatabase} from 'idb';
-import {Status, Task} from "../models/task";
+import {DBSchema, IDBPDatabase, openDB} from 'idb';
+import {Task} from "../models/task";
 
 export const databaseName = "tasks-db";
 interface TaskSchema extends DBSchema {
     tasks: {
         value: {
-            id: bigint;
+            id: string;
             title: string;
             body: string;
-            reminder: bigint
-            status: Status
+            reminder: number
         };
         key: string;
     };

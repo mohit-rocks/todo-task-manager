@@ -1,14 +1,8 @@
 
-export enum Status {
-    "completed",
-    "open",
-    "snoozed",
-}
 export interface Task {
-    id: bigint
+    id: string
     title: string
     body: string
     // Reminder time is stored in unix timestamp.
-    reminder: bigint
-    status: Status
+    reminder: number
 }
